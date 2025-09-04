@@ -1,39 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Happy Birthday 🎉</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      background: linear-gradient(135deg, #f9d29d, #f6c3e5);
       overflow: hidden;
     }
+
     .card {
       text-align: center;
       background: white;
       padding: 2rem;
       border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      position: relative;
-      z-index: 1;
-      max-width: 400px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      max-width: 420px;
       animation: fadeIn 2s ease;
+      z-index: 1;
     }
+
     h1 {
       font-size: 2.5rem;
       color: #ff4e50;
+      margin-bottom: 0.5rem;
     }
+
     p {
       font-size: 1.1rem;
       color: #333;
+      line-height: 1.5;
     }
+
     button {
       margin-top: 1.5rem;
       padding: 0.8rem 1.5rem;
@@ -45,6 +50,7 @@
       cursor: pointer;
       transition: 0.3s;
     }
+
     button:hover {
       background: #fc913a;
     }
@@ -55,9 +61,9 @@
     }
 
     .hidden-message {
-      margin-top: 1rem;
+      margin-top: 1.5rem;
       font-weight: bold;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       color: #444;
       display: none;
     }
@@ -69,8 +75,11 @@
       height: 10px;
       background: red;
       top: -10px;
+      border-radius: 50%;
+      opacity: 0.8;
       animation: fall linear forwards;
     }
+
     @keyframes fall {
       to { transform: translateY(100vh) rotate(720deg); opacity: 0; }
     }
@@ -79,24 +88,24 @@
 <body>
   <div class="card">
     <h1>🎂 Happy Birthday! 🎂</h1>
-    <p>On this special day, may your heart be light, your dreams be bright, and your journey filled with love. 💖</p>
-    <button onclick="showMessage()">Reveal My Secret Gift</button>
+    <p>Today, the universe celebrates you. May your heart be light, your dreams shine bright, and your journey overflow with love and joy. 💖</p>
+    <button onclick="showMessage()">Open Your Gift 🎁</button>
     <div class="hidden-message" id="message">💌 Code of Love: L = (H × K) + ∞</div>
   </div>
 
   <script>
     function showMessage() {
-      document.getElementById('message').style.display = 'block';
+      document.getElementById("message").style.display = "block";
       launchConfetti();
     }
 
     function launchConfetti() {
       for (let i = 0; i < 100; i++) {
-        let confetti = document.createElement('div');
-        confetti.className = 'confetti';
-        confetti.style.left = Math.random() * window.innerWidth + 'px';
+        let confetti = document.createElement("div");
+        confetti.className = "confetti";
+        confetti.style.left = Math.random() * window.innerWidth + "px";
         confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 60%)`;
-        confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
         confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
         document.body.appendChild(confetti);
         setTimeout(() => confetti.remove(), 5000);
@@ -105,3 +114,4 @@
   </script>
 </body>
 </html>
+
